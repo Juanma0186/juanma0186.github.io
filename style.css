@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+:root {
+  --morado: #b446f8;
+  --bg-color: #222;
+  --height-navbar: 75px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mooli', cursive;
+  background-color: var(--bg-color);
+  color: var(--morado);
+  margin-top: calc(var(--height-navbar));
+}
+
+.navbar {
+  width: 100%;
+  height: var(--height-navbar);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: var(--morado);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar a:active {
+  color: #fff;
+}
+
+ul {
+  display: flex;
+  gap: 50px;
+}
+
+li {
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+li a {
+  color: var(--morado);
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.4s ease;
+}
+
+li:hover {
+  transition: all 0.4s ease;
+}
+
+li:hover a {
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+
+li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #b446f8, #ECA400);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+
+li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+}
+
+.navbar li.active a {
+  color: #fff;
+}
+
+.navbar li.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+}

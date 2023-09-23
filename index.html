@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Juanma0186</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li class="active"><a href="#inicio">Home</a></li>
+        <li><a href="#acerca">About me</a></li>
+        <li><a href="#servicios">Projects</a></li>
+        <li><a href="#contacto">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="uwu">
+    <!-- Contenido de la sección "Inicio" -->
+  </section>
+
+  <section id="acerca" class="uwu2">
+    <!-- Contenido de la sección "Acerca de" -->
+  </section>
+
+  <section id="servicios" class="uwu">
+    <!-- Contenido de la sección "Servicios" -->
+  </section>
+
+  <section id="contacto" class="uwu2">
+    <!-- Contenido de la sección "Contacto" -->
+  </section>
+
+
+  <script>
+    // Función para verificar qué sección está visible
+    function checkScroll() {
+      const sections = document.querySelectorAll('section'); // Obtener todas las secciones
+      const navLinks = document.querySelectorAll('.navbar li'); // Obtener los enlaces del menú
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect(); // Obtener la posición de la sección
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          // Si la sección está en el rango superior de la ventana
+          navLinks.forEach((link) => {
+            link.classList.remove('active'); // Eliminar la clase "active" de todos los enlaces
+          });
+          navLinks[index].classList.add('active'); // Agregar la clase "active" al enlace correspondiente
+        }
+      });
+    }
+
+    // Escuchar el evento de desplazamiento
+    window.addEventListener('scroll', checkScroll);
+  </script>
+
+</body>
+
+</html>

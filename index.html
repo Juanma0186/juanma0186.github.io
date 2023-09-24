@@ -13,33 +13,42 @@
   <header>
     <nav class="navbar">
       <ul>
-        <li class="active"><a href="#inicio">Home</a></li>
-        <li><a href="#acerca">About me</a></li>
-        <li><a href="#servicios">Projects</a></li>
-        <li><a href="#contacto">Contact</a></li>
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#aboutme">About me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <main>
+    <section id="home">
+      <h1>WIP</h1>
+    </section>
 
-  <section id="inicio" class="uwu">
-    <!-- Contenido de la sección "Inicio" -->
-  </section>
+    <hr>
 
-  <section id="acerca" class="uwu2">
-    <!-- Contenido de la sección "Acerca de" -->
-  </section>
+    <section id="aboutme">
+      <h1>WIP</h1>
+    </section>
 
-  <section id="servicios" class="uwu">
-    <!-- Contenido de la sección "Servicios" -->
-  </section>
+    <hr>
 
-  <section id="contacto" class="uwu2">
-    <!-- Contenido de la sección "Contacto" -->
-  </section>
+    <section id="projects">
+      <div class="container">
+        <h1 class="title">PROJECTS</h1>
+      </div>
+    </section>
 
+    <hr>
+
+    <section id="contact">
+      <h1>WIP</h1>
+    </section>
+
+  </main>
 
   <script>
-    // Función para verificar qué sección está visible
+    // Función para verificar qué sección está visible y desplazar un poco más arriba
     function checkScroll() {
       const sections = document.querySelectorAll('section'); // Obtener todas las secciones
       const navLinks = document.querySelectorAll('.navbar li'); // Obtener los enlaces del menú
@@ -56,8 +65,29 @@
       });
     }
 
-    // Escuchar el evento de desplazamiento
+    // Escuchar el evento de desplazamiento y realizar el desplazamiento con compensación
     window.addEventListener('scroll', checkScroll);
+
+    // Añadir compensación al hacer clic en los enlaces internos
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const offset = 75; // Ajusta esto según tu diseño
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth' // Desplazamiento suave
+          });
+        }
+      });
+    });
+
   </script>
 
 </body>

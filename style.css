@@ -133,12 +133,7 @@ hr {
 }
 
 .title {
-  margin-top: 25px;
-  ;
-  position: relative;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  margin: 25px auto;
   width: fit-content;
   font-size: 30px;
   font-weight: 500;

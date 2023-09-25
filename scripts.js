@@ -42,6 +42,6 @@ document.querySelectorAll('.navbar a[href^="#"]').forEach((anchor) => {
 //Redirigir a otra página
 
 function redirection(url) {
-  (window.location.href = "https://juanma0186.github.io/Projects" + url),
+  (window.location.href = "https://juanma0186.github.io/Projects/" + url),
     "_blank";
 }

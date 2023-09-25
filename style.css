@@ -152,6 +152,7 @@ hr {
 .proyectos {
   margin: auto;
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   grid-gap: 10px;
   background-color: #444;
@@ -197,16 +198,6 @@ hr {
   background-clip: content-box, border-box;
 }
 
-.circle:hover {
-  animation: spin 1s linear infinite;
-  /* Hacemos la animación */
-  border: 2px solid #fff;
-  /* Ponemos el borde blanco */
-  border-top-color: transparent;
-  /* Ponemos el borde transparente */
-  border-radius: 50%;
-  /* Hacemos el borde circular */
-}
 
 .content {
   width: 80px;
@@ -231,7 +222,18 @@ hr {
 
 /*?---------------------------------------ANIMATION---------------------------------------?*/
 
-/*crea una animacion de que de la vuelta el circulo*/
+/*crea una animacion de que de la vuelta en el eje z el circulo*/
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 
 .name2 {

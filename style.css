@@ -160,10 +160,10 @@ hr {
 /*?---------------------------------------PROYECTOS---------------------------------------?*/
 
 .proyectos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-  grid-gap: 10px;
-  justify-items: center;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   background-color: #444;
   padding: 20px;
